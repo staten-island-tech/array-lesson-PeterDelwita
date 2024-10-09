@@ -69,8 +69,49 @@ const products = [
 //   console.log(product.name, product.price * markup)
 // );
 
-const categories = [];
-products.forEach((product) => {
-  if (!categories.includes(product.category)) categories.push(product.category); // Push adds elements to lists; if the list of categories does not include a category, it will be included as we go through each product (! is used to denote )
-});
-console.log(categories);
+// const categories = [];
+// products.forEach((product) => {
+//   if (!categories.includes(product.category)) categories.push(product.category); // Push adds elements to lists; if the list of categories does not include a category, it will be included as we go through each product (! is used to denote )
+// });
+// console.log(categories);
+
+// Filter based on category
+
+// const electronics = products.filter(
+//   (product) => product.category === "Electronics"
+// );
+// console.log("Electronics:", electronics);
+
+// const accessories = products.filter(
+//   (product) => product.category === "Accessories"
+// );
+// console.log("Accessories:", accessories);
+
+// // Filter based on price
+
+// const expensiveProducts = products.filter((product) => product.price > 300); // Only allow products costing more than 300
+// console.log("Expensive Products:", expensiveProducts); // Log expensive products
+
+// const highlyRatedProducts = products.filter((product) => product.rating >= 4.5);
+// console.log("Highly Rated Products:", highlyRatedProducts);
+
+// Combined forEach and filter
+
+const highlyRatedProducts = products
+  .filter((product) => product.rating >= 4.5)
+  .forEach((product) => console.log(product.name));
+
+const affordableProducts = products
+  .filter((product) => product.price < 1000)
+  .forEach((product) =>
+    console.log(
+      "Name:",
+      product.name,
+      "Price:",
+      product.price,
+      "Category:",
+      product.category,
+      "Rating:",
+      product.rating
+    )
+  );
